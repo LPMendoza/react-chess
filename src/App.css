@@ -1,5 +1,15 @@
+html,
+body {
+  height: 100;
+  background-color: #d3d3d3;
+}
+
 .App {
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 .App-logo {
@@ -26,6 +36,137 @@
 
 .App-link {
   color: #61dafb;
+}
+
+table {
+  border-collapse: collapse;
+  box-shadow: 20px 20px 60px rgba(0,0,0,0.4),
+   -20px -20px 25px rgba(255, 255, 255, 1);
+  ;
+  border-radius: 20px;
+}
+
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 20px;
+}
+
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 20px;
+} 
+
+table tr:first-child td:first-child {
+  border-top-left-radius: 20px;
+}
+
+table tr:first-child td:last-child {
+  border-top-right-radius: 20px;
+}
+
+.cell {
+  width: 60px;
+  height: 60px;
+  transition: 0.2s ease;
+}
+
+.piece-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-black {
+  background-color: #333;
+}
+
+.bg-white {
+  background-color: #d3d3d3;
+}
+
+.bg-selected {
+  background-color: #00587a;
+}
+
+.bg-active {
+  background-color: #44c4ae;
+  box-shadow: inset 0px 10px 10px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+.bg-active:hover {
+  background-color: #219481;
+  cursor: pointer;
+}
+
+.bg-enemy {
+  background-color: #d8345dcc;
+  box-shadow: inset 0px 10px 10px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.bg-enemy:hover {
+  background-color: #a52a2acc;
+  cursor: pointer;
+}
+
+.piece {
+  height: 40px;
+  width: 40px;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer !important;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.6);
+  animation: piece-appear .4s ease;
+  transition: 0.2s ease;
+}
+
+.piece img {
+  width: 20px;
+}
+
+.piece-dark {
+  background-color: #666;
+}
+
+.piece-white {
+  background-color: #eee;
+}
+
+.cell:hover .piece {
+  transform: translateY(-3px);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+  transform: scale(1.2);  
+
+}
+
+.piece:focus {
+  outline: none;
+  transform: translateY(-3px);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+  transform: scale(1.2);  
+
+}
+
+.piece > label {
+  cursor: pointer !important;
+
+}
+
+@keyframes piece-appear {
+  0% {
+    transform: scale(0);
+  }
+  25% {
+    transform: scale(.25);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes App-logo-spin {
